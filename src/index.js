@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export const UserContext = React.createContext()
+const userName = 'Siri'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render(
+    <UserContext.Provider value={userName}>
+        <App />
+    </UserContext.Provider>
+    , document.getElementById('root'));
+
+
 serviceWorker.unregister();
