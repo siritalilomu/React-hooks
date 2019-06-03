@@ -1,5 +1,4 @@
-import React, { useContext, useReducer } from 'react'
-import { UserContext } from './index'
+import React, { useReducer } from 'react'
 
 const initialState = {
   count: 0
@@ -24,7 +23,6 @@ function reducer(state, action) {
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const value = useContext(UserContext)
 
   return (
     <div>
